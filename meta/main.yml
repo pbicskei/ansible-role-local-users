@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: local-users
+  role_name: user_management
   author: Peter Bicskei
   description: Role to enroll default local-users to the host
   company: no company (optional)
