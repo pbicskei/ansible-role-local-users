@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-role-local-users
+local_users: 
+  - "{{ lookup('env', 'USER') }}"

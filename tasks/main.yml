@@ -1,0 +1,9 @@
+---
+# tasks file for ansible-role-local-users
+- name: "Remove default user accounts"
+  user:
+    state: absent
+    name: "{{item}}"
+  loop: 
+  - pi
+  - ubuntu
