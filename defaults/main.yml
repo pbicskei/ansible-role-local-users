@@ -9,5 +9,6 @@ default_users:
   - ec2_user
   - centos
 
+default_pub_key_file: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
 local_users: 
-  - { name: "{{ lookup('env', 'USER') }}", groups: [sudo,adm], state: "present", shell: "/bin/zsh", pub_key_file: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub", pub_key: "{{lookup('file', '{{ pub_key_file }}' ) }}", admin: true }
+  - { name: "{{ lookup('env', 'USER') }}", groups: ['sudo','adm'], state: present, shell: /bin/zsh, pub_key: "{{ lookup('file', '{{ default_pub_key_file }}' ) }}", admin: true }
